@@ -5,8 +5,9 @@ def lesson_001() -> None:
     # Strings are immutable
     immutable: str = "you can't change me!"
     immutable.replace("can't", "can")
-    immutable + "!!"   # NOQA (No Quality Assurance)
+    immutable + "!!"  # NOQA (No Quality Assurance)
     print(immutable)
+
 
 def lesson__002() -> None:
     from helper import lesson_002_helper
@@ -16,13 +17,14 @@ def lesson__002() -> None:
     lesson_002_helper(_list=mutable_list, _dict=mutable_dict)
     print(f"{mutable_list=}", f"{mutable_dict=}")
 
+
 def lesson_003() -> None:
     _txt = "AaShish gahlAwat"
-    print("1. Text: %s"%_txt)
+    print("1. Text: %s" % _txt)
     print(f"2. Text: {_txt}")
     print("3. {0} {1}".format("Text:", _txt))
     print("4. Text: {_var}".format(_var=_txt))
-    print("5. Text: ", f"{_txt} "*2)
+    print("5. Text: ", f"{_txt} " * 2)
     print(r"C:\user")
     print(fr"C:\user\{_txt}")
     print(f"{_txt:#<20}")
@@ -33,6 +35,7 @@ def lesson_003() -> None:
     print(_txt.title())
     print(_txt.lower())
 
+
 def lesson_004() -> None:
     _ = 500
     a = 1000
@@ -40,12 +43,14 @@ def lesson_004() -> None:
     print("==: ", a == b)
     print("is: ", a is b)
 
+
 def lesson_005() -> None:
     a = 0.3
     b = 0.1 + 0.2
     print(f"{a=}")
     print(f"{b=}")
     print(a == b)
+
 
 def lesson_006() -> None:
     import math
@@ -64,6 +69,7 @@ def lesson_006() -> None:
     ]
     print(math.comb(len(_list), _combinations))
 
+
 def lesson_007() -> None:
     a = False
     b = False
@@ -71,20 +77,23 @@ def lesson_007() -> None:
     d = False
     e = False
 
-    _args = [a, b, c ,d , e]
+    _args = [a, b, c, d, e]
 
     print("Least one is True") if any(_args) else print("All are False")
     print("All are True") if all(_args) else print("All are not True")
+
 
 def lesson_008() -> None:
     _str = "radar"
     print("Palindrome: ", _str == _str[::-1])
 
+
 def lesson_009() -> None:
     _txt = "Split me down!"
-    print(_txt:=_txt.split(" "))
+    print(_txt := _txt.split(" "))
     print(*_txt)
     print([*_txt])
+
 
 def lesson_010() -> None:
     from helper import (
@@ -101,7 +110,7 @@ def lesson_010() -> None:
     generator_time = timeit.timeit(stmt=lesson_010_generator_return, number=10_000)
     print(f"{for_time=}")
     print(f"{generator_time=}")
-    print(round((for_time/generator_time)*100, 2), "% faster")
+    print(round((for_time / generator_time) * 100, 2), "% faster")
 
 
 def lesson_011() -> None:
@@ -109,11 +118,13 @@ def lesson_011() -> None:
     for _attr in dir(_txt):
         print(_attr)
 
+
 def lesson_012() -> None:
     a, b = 1, 2
     print(f"{a=} {b=}")
     b, a = a, b
     print(f"{a=} {b=}")
+
 
 def lesson_013() -> None:
     from getpass import getpass
@@ -132,6 +143,7 @@ def lesson_014() -> None:
         _tuple[0] = 0  # NOQA
     except TypeError:
         print("Tuples are immutable")
+
 
 def lesson_015() -> None:
     _var1 = (1)  # NOQA
@@ -153,6 +165,7 @@ def lesson_016() -> None:
     def loop__on_list():
         for i in [1, 2, 3, 4, 5]:
             pass
+
     def loop_on_tuple():
         for i in (1, 2, 3, 4, 5):
             pass
@@ -163,9 +176,11 @@ def lesson_016() -> None:
     print(f"{tuple_time=}")
     print(round((list_time / tuple_time) * 100, 2), "% faster")
 
+
 def lesson_017() -> None:
     def first(_name):
         print(f"{_name} function called!")
+
     def second(_name):
         print(f"{_name} function called!")
 
@@ -202,15 +217,17 @@ def lesson_018() -> None:
     except TypeError:
         print("Can't call WITH keyword arguments")
 
+
 def lesson_019() -> None:
     help(float)
+
 
 def lesson_020() -> None:
     import logging
     _red = "\033[91m"
-    print(_red+"RED")
+    print(_red + "RED")
     _yellow = "\033[93m"
-    print(_yellow+"YELLOW")
+    print(_yellow + "YELLOW")
 
     logging.info("Information Log")
     logging.error("Error Log")
@@ -219,6 +236,7 @@ def lesson_020() -> None:
     logging.critical("Critical log")
 
     logging.log(level=0, msg="Log of level 1")
+
 
 def lesson_021() -> None:
     from bisect import bisect
@@ -303,6 +321,7 @@ def lesson_027() -> None:
     print(np.array(_list2).flatten())
     print(np.array(_list2).flatten())
 
+
 def lesson_028() -> None:
     from package1 import lesson_028_helper
     print(lesson_028.__qualname__)
@@ -313,13 +332,16 @@ def lesson_029() -> None:
     # Pickle
     return
 
+
 def lesson_030() -> None:
     # Data Class
     return
 
+
 def lesson_031() -> None:
     # Context Manager
     return
+
 
 def lesson_032() -> None:
     _list1 = [1, 2, 3, 3]
@@ -329,6 +351,7 @@ def lesson_032() -> None:
     print(f"{_set1}")
     print(f"{_set2}")
     print(_set1 == _set2)
+
 
 def lesson_033() -> None:
     _list: list[str, ...] = ["first", "second", "third"]
@@ -348,51 +371,225 @@ def lesson_034() -> None:
     # Regex
     return
 
+
 def lesson_035() -> None:
     # Lists XOR
     return
+
 
 def lesson_036() -> None:
     # Decorators
     return
 
 
+def lesson_037() -> None:
+    from sys import getsizeof
+    print(getsizeof(range(1000)))
+    print(getsizeof(list(range(1000))))
+
+
+def lesson_038() -> None:
+    import os
+    print(os.getcwd())
+
+
+def lesson_039() -> None:
+    print(_txt := "Aashish");
+    print(_txt := "Gahlawat")
+
+
+def lesson_040() -> None:
+    _none = "I am not None instance!"
+
+    if _none is not None:
+        print("Right Way to check for None")
+
+    if None is not _none:
+        print("Alternative way to check for None")
+
+    if not _none is None:  # NOQA
+        print("Alternate way to check for None")
+
+
+def lesson_041() -> None:
+    _list = [1, 2, 3]
+    print(_list * 3)
+
+
+def lesson_042() -> None:
+    print(1_00)  # Numeric
+    print(0b_0101)  # Binary
+    print(0x_52_fa)  # Hex
+    print(1_00 * 1_00_00)
+
+
+def lesson_043() -> None:
+    _name, _, _age = ("Ashish", "Throw Away", 28)
+    print(f"{_name=}", f"{_age=}")
+    _first, *_, _last = [1, 2, 3, 4, 5]
+    print(f"{_first=}", f"{_last=}")
+
+
+def lesson_044() -> None:
+    item = ["SWORD", "SHIELD", "PEN", "NEEDLE"]
+    rarity = [4, 3, 2, 1]
+    weight = [400, 300, 20, 1]
+    _inventory = zip(item, rarity, weight)
+    i, r, w = zip(*_inventory)
+    print(list(_inventory))  # Empty
+    print("Items: {0}\nRarity{1}\nWeight: {2}".format(i, r, w))
+
+
+def lesson_045() -> None:
+    _val = 0.7 + 0.6
+    # float calculations are not precise
+    print(True) if _val >= 1.3 else print(False)
+
+
+def lesson_046() -> None:
+    def is_divisible_by_2(_num):
+        # similar to apply in pandas
+        return True if _num % 2 == 0 else False
+
+    _list = [1, 2, 3, 4, 5, 6]
+    print(list(filter(is_divisible_by_2, _list)))
+
+
+def lesson_047() -> None:
+    def _add(*numbers):
+        return sum(numbers)
+
+    print(_add(1, 2, 3, 4, 5))
+
+
+def lesson_048() -> None:
+    x = int("1234567"[6])  # 7
+    y = -round(2.1)  # -2
+    print(x // y)  # Quotient
+
+
+def lesson_049() -> None:
+    import shutil
+    # shutil.rmtree("folder_path_to_delete")
+
+
+def lesson_050() -> None:
+    print(round(123, -2))
+    print(str(round(123, -2))[-3])
+
+
+def lesson_051() -> None:
+    print("Make cursor move randomly infinitely")
+    # import pyautogui as pag
+    # import random
+    # import time
+    # while True:
+    #     x = random.randint(600, 700)
+    #     y = random.randint(200, 600)
+    #     pag.moveTo(x, y, 0.5)
+    #     time.sleep(2)
+
+
+def lesson_052() -> None:
+    _banana = "BANANA"
+    _orange = "ORANGE"
+    _apple = "APPLE"
+    _mango = "MANGO"
+
+    _list = [_banana, _orange, _apple, _mango]
+    _rarity = {
+        _orange: 1,
+        _banana: 2,
+        _mango: 3,
+        _apple: 4,
+    }
+
+    print(sorted(_list, key=_rarity.__getitem__, reverse=True))
+    print("Banana Rarity: ", _rarity.__getitem__(_banana))
+
+
+def lesson_053() -> None:
+    eval("print('WARNING: Never use `eval` unless you really have to')")
+
+
+def lesson_054() -> None:
+    _list1 = [1, 2]
+    _list2 = [3, 4]
+
+    print(_list1)
+    _list1.extend(_list2)
+    print(_list1)
+    print(_list1 + _list2)
+
+
+def lesson_055() -> None:
+    def _divide(_denominator):
+        try:
+            1 / _denominator
+        except ZeroDivisionError:
+            print("Can not divide by Zero")
+        else:
+            print("Divided without any exception")
+        finally:
+            print("Exception Exited")
+
+    print("Dividing by 1")
+    _divide(1)
+    print("Dividing by 0")
+    _divide(0)
+
+
+def lesson_056() -> None:
+    from time import time
+    _range = 1_00_000_000
+
+    _list1 = []
+    _start = time()
+    for i in range(_range):
+        # Each time an element is added, memory is allocated
+        _list1.append(i)
+    print(_start - time())
+
+    _list2 = [0] * _range
+    _start = time()
+    for i in range(_range):
+        _list2[i] = i
+    print(_start - time())
+
+
+def lesson_057() -> None:
+    x = 3
+    y = (x - 1) ^ 2  # XOR
+    print(y)
+
+
+def lesson_058() -> None:
+    _name = "aashish"
+
+    if _name == "first" or "second":
+        print(True)
+
+
+def lesson_059() -> None:
+    _list = ["first", "second"]
+
+    for idx, _txt in enumerate(_list):
+        print(f"{idx}: {_txt}")
+
+
+def lesson_060() -> None:
+    from enum import Enum
+    # enums
+    class Status(Enum):
+        FIRST = "one"
+        SECOND = "two"
+
+    print(Status.FIRST.name)
+    print(Status.FIRST.value)
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    # lesson_001()
-    # lesson__002()
-    # lesson_003()
-    # lesson_004()
-    # lesson_005()
-    # lesson_006()
-    # lesson_007()
-    # lesson_008()
-    # lesson_009()
-    # lesson_010()
-    # lesson_011()
-    # lesson_012()
-    # lesson_013()
-    # lesson_014()
-    # lesson_015()
-    # lesson_016()
-    # lesson_017()
-    # lesson_018()
-    # lesson_019()
-    # lesson_020()
-    # lesson_021()
-    # lesson_022()
-    # lesson_023()
-    # lesson_024()
-    # lesson_025()
-    # lesson_026()
-    # lesson_027()
-    # lesson_028()
-    # lesson_029()
-    # lesson_030()
-    # lesson_031()
-    # lesson_032()
-    # lesson_033()
+    lesson_060()
     print("Lessons by Aashish Gahlawat")
