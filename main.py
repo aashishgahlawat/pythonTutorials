@@ -729,10 +729,149 @@ def lesson_072() -> None:
     return
 
 
+def lesson_073() -> None:
+    _var1 = "Aashish Gahlawat"
+    _var2: str = "Aashish Gahlawat"
+
+    def _test_fn1(_list: str):
+        for _ in _list:
+            ...
+
+    def _test_fn2() -> str:
+        return 1  # NOQA
+
+    _test_fn1([1, 2, 3])  # NOQA
+    print(_test_fn2())
+    print(_var1 is _var2, _var1 == _var2)
+
+
+def lesson_074() -> None:
+    class Parent:
+        ...
+
+    class Child(Parent):
+        ...
+
+    print(isinstance(Child(), Child))
+    print(type(Child()) == Child)
+
+    print(isinstance(Child(), Parent))
+    print(type(Child()) == Parent)
+
+
+def lesson_075() -> None:
+    _list = [1, 2, 3, 4, 5, 6]
+
+    print(_list[::2])
+    print(_list[::-1])
+    print(_list[::-2])
+
+
+def lesson_076() -> None:
+    _people = [("Aashish", 5000), ("Gahlawat", 1000)]
+
+    def tax_fn(_person: tuple):
+        _tax_rate = 0.05
+        _name = _person[0]
+        _salary = _person[1] - (_person[1] * _tax_rate)
+        return _name, _salary  # (_name, _age) tuple
+
+    _post_tax = list(map(tax_fn, _people))
+    print(_post_tax)
+
+
+def lesson_077() -> None:
+    _var1 = 1
+    _var2 = 2
+
+    if 1 == _var1 < 2:  # (1 == _var1) and (_var1 < 2)
+        print(True)
+
+
+def lesson_078() -> None:
+    from copy import copy, deepcopy
+    _list1 = [1, [2], 4]
+    _list2 = copy(_list1)
+    _list3 = deepcopy(_list1)
+
+    _list1.append(5)
+    _list1[1].append(3)
+
+    print()
+    print(_list1)
+    print(_list2)
+    print(_list3)
+
+
+def lesson_079() -> None:
+    from copy import copy
+    _var1 = 1
+    _var2 = 1
+    _var3 = copy(_var1)
+    _var4 = 3
+
+    print(_var1 is _var2, _var2 is _var3)
+    print(_var1 == _var2, _var2 == _var3)
+
+    print()
+    print(id(_var1))
+    print(id(_var2))
+    print(id(_var3))
+    print()
+    print(id(_var4))
+
+
+def lesson080() -> None:
+    _var1 = True
+    _var2 = True
+    _var3 = True
+
+    def without_guard_clause():
+        if _var1:
+            if _var2:
+                if _var3:
+                    print("Victory")
+                else:
+                    print("_var3 is False")
+            else:
+                print("_var2 is False")
+        else:
+            print("_var1 is False")
+
+    def with_guard_clause():
+        if not _var1:
+            print("_var1 is False")
+            return
+        if not _var2:
+            print("_var3 is False")
+            return
+        if not _var3:
+            print("_var3 is False")
+            return
+        print("Victory")
+
+
+def lesson_081() -> None:
+    _list1 = [1, 2, 3, 4]
+    _list2 = [1, 2, 3, 4]
+
+    print(id(_list1), id(_list2))  # Mutable
+    print(_list1 is not _list2)
+    print(_list1 != _list2)
+    ...
+
+
+def lesson_082() -> None:
+    from math import ceil
+    print(7 / 3)
+    print(7 // 3)
+    print(ceil(7 / 3))
+
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    _lesson_number = "066"
+    _lesson_number = "081"
     eval(f"lesson_{_lesson_number}()")
-    print("Lessons by Aashish Gahlawat")
+    print("\nLessons by Aashish Gahlawat")

@@ -1,7 +1,10 @@
-# Lessons Summary
+# Who is the repo for?
+Assuming that you know the basics.
 
-Snippets to learn python faster (**for beginner**) to ease day to day coding.
-No long theories. Happy Coding
+This repo is free on long theories and dives you directly into code snippets that are made to make your day to day usual
+coding style better and to answer your usual questions that makes python different from other languages.
+
+Happy Coding!
 
 #### Requirements:
 
@@ -28,8 +31,8 @@ pip install -r requirements.txt
 
 | Lesson |                              Description                               |
 |:------:|:----------------------------------------------------------------------:|
-|   1    |                         Immutable is immutable                         |
-|   2    |       Mutable are call by reference, watch out before you update       |
+|   1    |                       Common immutable mistakes                        |
+|   2    |                     Mutable are call by reference                      |
 |   3    |                           String Formatting                            |
 |   4    |                  `is` for instance and `==` for value                  |
 |   5    |                           `float` is tricky                            |
@@ -100,6 +103,16 @@ pip install -r requirements.txt
 |   70   |                        Multiple inheritance MRO                        |
 |   71   |                       `return` vs `return None`                        |
 |   72   |                             Name Mangling                              |
+|   73   |                          Type hints and `...`                          |
+|   74   |                         `type` vs `isinstance`                         |
+|   75   |                             `list` slicing                             |
+|   76   |                                 `map`                                  |
+|   77   |                    `1 == 1 < 2` chained operations                     |
+|   78   |                          `copy` vs `deepcopy`                          |
+|   79   |                                  `id`                                  |
+|   80   |                        Guard clauses technique                         |
+|   81   |                            `is not` vs `!=`                            |
+|   82   |                          `match.ceil` & `//`                           |
 
 ## Abbreviations
 
