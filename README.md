@@ -88,6 +88,18 @@ pip install -r requirements.txt
 |   58   |                            Common `==` BUG                             |
 |   59   |                              `enumerate`                               |
 |   60   |                                 `enum`                                 |
+|   61   |                               `callable`                               |
+|   62   |                              `isinstance`                              |
+|   63   |                         `dict.get("x", None)`                          |
+|   64   |                         `__init__` & `getattr`                         |
+|   65   |                               `__new__`                                |
+|   66   |                     `property` & `property.setter`                     |
+|   67   |                                `super`                                 |
+|   68   |                          `pass` vs `continue`                          |
+|   69   |              `super(Class, self).fn()` vs `super().fn()`               |
+|   70   |                        Multiple inheritance MRO                        |
+|   71   |                       `return` vs `return None`                        |
+|   72   |                             Name Mangling                              |
 
 ## Abbreviations
 

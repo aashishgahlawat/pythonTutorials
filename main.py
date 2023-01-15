@@ -587,11 +587,144 @@ def lesson_060() -> None:
     print(Status.FIRST.name)
     print(Status.FIRST.value)
 
+def lesson_061() -> None:
+    class CallableClass:
+        def __call__(self, *args, **kwargs):
+            print("Class called")
+
+    _callable_class_var = CallableClass()
+
+    class NonCallableClass:
+        pass
+
+    _non_callable_class_var = NonCallableClass()
+
+    def callable_function():
+        print("Function called")
+
+    _variable: str = "Non callable variable"
+
+    print(callable(callable_function))
+    print(callable(_callable_class_var))
+
+    print(callable(_variable))
+    print(callable(_non_callable_class_var))
+
+def lesson_062() -> None:
+    _txt = "Aashish Gahlawat"
+    print(isinstance(_txt, str))
+    print(isinstance(_txt, (int, str)))
+    print(isinstance(_txt, (int, float)))
+
+
+def lesson_063() -> None:
+    _dict = {"key": "value"}
+    print(_dict.get("key", None))
+    print(_dict.get("invalid_key", None))
+
+
+def lesson_064() -> None:
+    class Person:
+
+        def __init__(self, _name):  # Constructor
+            print("Initializing object")
+            self.name = _name
+
+    p1 = Person("Aashish Gahlawat")
+    print(getattr(p1, "name", None))
+    print(getattr(p1, "age", None))
+
+
+def lesson_065() -> None:
+    class Person:
+
+        def __new__(cls, *args, **kwargs):
+            print("Creating object")
+            return super().__new__(cls, *args, *kwargs)
+
+    Person()
+
+
+def lesson_066() -> None:
+    # property (setter & getter)
+    class Person:
+        def __init__(self, _a):
+            self._age = _a
+
+        @property  # Getter
+        def age(self):
+            return self._age
+
+        @age.setter
+        def age(self, _a):
+            self._age = _a
+
+
+    p1 = Person(28)
+    print(p1.age)
+    p1.age = 29
+    print(p1.age)
+
+def lesson_067() -> None:
+    # super
+    return
+
+
+def lesson_068() -> None:
+    # pass vs continue
+    for num in range(0, 2):
+        pass  # null operator (when statement is required)
+        print("This statement is after 'pass'")
+        continue
+        print("This statement is after 'continue'")  # NOQA
+
+    for num in range(50, 100, 10):
+        pass  # null operator (when statement is required)
+    return
+
+def lesson_069() -> None:
+    # super(Class, self).function(*args, **kwargs)
+    # super().function(*args, **kwargs)
+    class Person1:
+
+        def __new__(cls, *args, **kwargs):
+            print("Creating object")
+            return super().__new__(cls, *args, *kwargs)
+
+    class Person2:
+
+        def __new__(cls, *args, **kwargs):
+            print("Creating object")
+            return super(Person2, cls).__new__(cls, *args, *kwargs)
+
+    Person1()
+    Person2()
+    return
+
+def lesson_070() -> None:
+    # Multiple inheritance MRO:
+    return
+
+def lesson_071() -> None:
+    def return_fn():
+        return
+
+    def return_none_fn():
+        return None
+
+    print(return_fn())
+    print(return_none_fn())
+
+
+def lesson_072() -> None:
+    # Name Mangling
+    return
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    _lesson_number = "060"
+    _lesson_number = "066"
     eval(f"lesson_{_lesson_number}()")
     print("Lessons by Aashish Gahlawat")
