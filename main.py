@@ -5,7 +5,7 @@ def lesson_001() -> None:
     # Strings are immutable
     immutable: str = "you can't change me!"
     immutable.replace("can't", "can")
-    immutable + "!!"  # NOQA (No Quality Assurance)
+    immutable + "!!"  # NOQA
     print(immutable)
 
 
@@ -394,8 +394,8 @@ def lesson_038() -> None:
 
 
 def lesson_039() -> None:
-    print(_txt := "Aashish");
-    print(_txt := "Gahlawat")
+    # noinspection
+    print(_txt := "Aashish"); print(_txt := "Gahlawat")  # NOQA
 
 
 def lesson_040() -> None:
@@ -587,9 +587,11 @@ def lesson_060() -> None:
     print(Status.FIRST.name)
     print(Status.FIRST.value)
 
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    lesson_060()
+    _lesson_number = "060"
+    eval(f"lesson_{_lesson_number}()")
     print("Lessons by Aashish Gahlawat")
