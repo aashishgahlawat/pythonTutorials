@@ -394,8 +394,11 @@ def lesson_038() -> None:
 
 
 def lesson_039() -> None:
-    # noinspection
+    # @formatter:off
+    a = 1; b = 2
+    print(f"{a=}", f"{b=}")
     print(_txt := "Aashish"); print(_txt := "Gahlawat")  # NOQA
+    # @formatter:on
 
 
 def lesson_040() -> None:
@@ -587,6 +590,7 @@ def lesson_060() -> None:
     print(Status.FIRST.name)
     print(Status.FIRST.value)
 
+
 def lesson_061() -> None:
     class CallableClass:
         def __call__(self, *args, **kwargs):
@@ -609,6 +613,7 @@ def lesson_061() -> None:
 
     print(callable(_variable))
     print(callable(_non_callable_class_var))
+
 
 def lesson_062() -> None:
     _txt = "Aashish Gahlawat"
@@ -659,11 +664,11 @@ def lesson_066() -> None:
         def age(self, _a):
             self._age = _a
 
-
     p1 = Person(28)
     print(p1.age)
     p1.age = 29
     print(p1.age)
+
 
 def lesson_067() -> None:
     # super
@@ -681,6 +686,7 @@ def lesson_068() -> None:
     for num in range(50, 100, 10):
         pass  # null operator (when statement is required)
     return
+
 
 def lesson_069() -> None:
     # super(Class, self).function(*args, **kwargs)
@@ -701,9 +707,11 @@ def lesson_069() -> None:
     Person2()
     return
 
+
 def lesson_070() -> None:
     # Multiple inheritance MRO:
     return
+
 
 def lesson_071() -> None:
     def return_fn():
