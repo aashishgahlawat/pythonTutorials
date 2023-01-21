@@ -472,7 +472,7 @@ def lesson_048() -> None:
 
 
 def lesson_049() -> None:
-    import shutil
+    pass
     # shutil.rmtree("folder_path_to_delete")
 
 
@@ -868,10 +868,62 @@ def lesson_082() -> None:
     print(ceil(7 / 3))
 
 
+def lesson_083() -> None:
+    _list1 = [1, 3, 2, 9, 4]
+    _list2 = [1, 3, 2, 9, 7, 3]
+    print(sorted(_list1))
+    print(_list2.sort())  # Inplace
+    print(_list2)
+
+def lesson_084() -> None:
+    print(list(range(0, 5)))
+
+
+def lesson_085() -> None:
+    # async
+    ...
+
+def lesson_086() -> None:
+    # PyTest strategy-fixture
+    ...
+
+
+def lesson_087() -> None:
+    # TDD & BDD
+    ...
+
+def lesson_088() -> None:
+    # __slots__
+    ...
+
+def lesson_089() -> None:
+    # TODO: Upgrade python
+
+    number = 51
+
+    match number:
+        case 10: print("number is 10")
+        case _: print("Number not found")
+
+    match number:
+        case _ if number < 50:
+            print('Number is less than 50')
+        case _ if number == 50:
+            print('Number is 50')
+        case _: print("Number not found")
+
+    match [number < 50, number == 50]:
+        case [True, False]:
+            print("Number less than 50")
+        case [_, True]:
+            print('Number is 50')
+        case [False, False]:
+            print("Number is greater than 50")
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    _lesson_number = "081"
+    _lesson_number = "089"
     eval(f"lesson_{_lesson_number}()")
     print("\nLessons by Aashish Gahlawat")
