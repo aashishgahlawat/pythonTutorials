@@ -114,13 +114,16 @@ pip install -r requirements.txt
 |   80   |                        Guard clauses technique                         |
 |   81   |                            `is not` vs `!=`                            |
 |   82   |                          `match.ceil` & `//`                           |
-|   83   |                    sorted(list)` vs `list.sorted()`                    |
+|   83   |                   `sorted(list)` vs `list.sorted()`                    |
 |   84   |                             `list(range)`                              |
 |   85   |                                `async`                                 |
 |   86   |                                `PyTest`                                |
 |   87   |                   Tes & Behaviour Driven Development                   |
 |   88   |                              `__slots__`                               |
 |   89   |                            `match` & `case`                            |
+|   90   |                          `*args` & `**kwargs`                          |
+|   91   |                               `datetime`                               |
+|   92   |                      `False == False in [False]`                       |
 
 ## Abbreviations
 

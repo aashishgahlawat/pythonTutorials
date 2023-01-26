@@ -427,7 +427,7 @@ def lesson_042() -> None:
 
 
 def lesson_043() -> None:
-    _name, _, _age = ("Ashish", "Throw Away", 28)
+    _name, _, _age = ("Ashish", "Throw Away", 99)
     print(f"{_name=}", f"{_age=}")
     _first, *_, _last = [1, 2, 3, 4, 5]
     print(f"{_first=}", f"{_last=}")
@@ -664,7 +664,7 @@ def lesson_066() -> None:
         def age(self, _a):
             self._age = _a
 
-    p1 = Person(28)
+    p1 = Person(99)
     print(p1.age)
     p1.age = 29
     print(p1.age)
@@ -920,10 +920,37 @@ def lesson_089() -> None:
         case [False, False]:
             print("Number is greater than 50")
 
+def lesson_090() -> None:
+
+    def args_kwargs_fn(*args, **kwargs):
+        print(args)
+        print(kwargs)
+
+    args_kwargs_fn(10, 20, 30)
+    print("*" * 25)
+    args_kwargs_fn(a=10, b=0, c=30)
+
+
+def lesson_091() -> None:
+    from datetime import datetime
+    _now = datetime.now()
+    _past = _now.replace(year=2000)
+    _diff = _now - _past
+    print(_diff)
+    print(_diff.days)
+
+def lesson_092() -> None:
+    x = False in [False]
+    y = False
+    print(f"{x=}", f"{y=}")
+    print("x == y", x == y)
+    print(False == False in [False])
+
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    _lesson_number = "089"
+    _lesson_number = "092"
     eval(f"lesson_{_lesson_number}()")
     print("\nLessons by Aashish Gahlawat")
