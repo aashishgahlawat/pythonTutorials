@@ -19,6 +19,7 @@ def lesson__002() -> None:
 
 
 def lesson_003() -> None:
+    # String Formatting
     _txt = "AaShish gahlAwat"
     print("1. Text: %s" % _txt)
     print(f"2. Text: {_txt}")
@@ -37,6 +38,7 @@ def lesson_003() -> None:
 
 
 def lesson_004() -> None:
+    # `is` vs `==`
     _ = 500
     a = 1000
     b = 500 + _
@@ -45,6 +47,7 @@ def lesson_004() -> None:
 
 
 def lesson_005() -> None:
+    # float errors
     a = 0.3
     b = 0.1 + 0.2
     print(f"{a=}")
@@ -53,6 +56,7 @@ def lesson_005() -> None:
 
 
 def lesson_006() -> None:
+    # Combinations
     import math
     _combinations = 3
     _list = [
@@ -71,6 +75,7 @@ def lesson_006() -> None:
 
 
 def lesson_007() -> None:
+    # `any` & `all`
     a = False
     b = False
     c = True
@@ -89,6 +94,7 @@ def lesson_008() -> None:
 
 
 def lesson_009() -> None:
+    # `walrus` & `args`
     _txt = "Split me down!"
     print(_txt := _txt.split(" "))
     print(*_txt)
@@ -96,6 +102,7 @@ def lesson_009() -> None:
 
 
 def lesson_010() -> None:
+    # Generator using `yield`
     from helper import (
         lesson_010_generator,
         lesson_010_generator_return,
@@ -114,6 +121,7 @@ def lesson_010() -> None:
 
 
 def lesson_011() -> None:
+    # dir
     _txt: str = "Text"
     for _attr in dir(_txt):
         print(_attr)
@@ -135,6 +143,7 @@ def lesson_013() -> None:
 
 
 def lesson_014() -> None:
+    # tuples
     _tuple = (1, 2)
     print(f"{_tuple=}")
     _tuple += (3, 4)
@@ -146,6 +155,7 @@ def lesson_014() -> None:
 
 
 def lesson_015() -> None:
+    # `int`, `list` & `tuple` declaration
     _var1 = (1)  # NOQA
     print(f"{_var1=}", type(_var1))
     _var2 = (1,)
@@ -157,6 +167,7 @@ def lesson_015() -> None:
 
 
 def lesson_016() -> None:
+    # `list` vs `tuple`
     # Iteration on tuple is slightly faster
     from timeit import timeit
     # Avoid dot operator as it need to locate function inside module
@@ -178,6 +189,7 @@ def lesson_016() -> None:
 
 
 def lesson_017() -> None:
+    # `dict` for if-else
     def first(_name):
         print(f"{_name} function called!")
 
@@ -194,6 +206,7 @@ def lesson_017() -> None:
 
 
 def lesson_018() -> None:
+    # `args` & `kwargs`
     _name = "Aashish Gahlawat"
 
     def only_kwargs(*, _name):
@@ -252,6 +265,7 @@ def lesson_021() -> None:
 
 
 def lesson_022() -> None:
+    # for-else
     for i in range(5):
         pass
     else:
@@ -265,6 +279,7 @@ def lesson_022() -> None:
 
 
 def lesson_023() -> None:
+    # Matrix multiplication
     # Avoid using from package_name import *
     import numpy as np
 
@@ -276,6 +291,7 @@ def lesson_023() -> None:
 
 
 def lesson_024() -> None:
+    # `dict` comprehension
     _names = ["Aashish", "Gahlawat"]
     _names_dict = {name: len(name) for name in _names}
     print("Names Length: ", _names_dict)
@@ -291,7 +307,7 @@ def lesson_025() -> None:
         "fifth",
         "sixty",
         "seventh",
-        "eighth"
+        "eighth"  # Missing `,`
         "ninth",
         "tenth",
     ]
@@ -300,6 +316,7 @@ def lesson_025() -> None:
 
 
 def lesson_026():
+    # Monkey Patching
     # Avoid Global Variables
 
     _data = helper.lesson_026_data()
@@ -313,6 +330,7 @@ def lesson_026():
 
 
 def lesson_027() -> None:
+    # Flatten nested list
     import numpy as np
     _list1 = [1, 2, 3]
     _list2 = [[1], [2], [3]]
@@ -323,6 +341,7 @@ def lesson_027() -> None:
 
 
 def lesson_028() -> None:
+    # __init__.py as package
     from package1 import lesson_028_helper
     print(lesson_028.__qualname__)
     lesson_028_helper()
@@ -335,7 +354,9 @@ def lesson_029() -> None:
 
 def lesson_030() -> None:
     # Data Class
-    return
+    from Basics.helper import LessonData
+    lesson = LessonData(name="DataClass Lesson")
+    print(lesson.link(qualname=lesson_030.__qualname__.replace('_', '-')))
 
 
 def lesson_031() -> None:
@@ -369,17 +390,43 @@ def lesson_033() -> None:
 
 def lesson_034() -> None:
     # Regex
-    return
+    import re
+    rex = "^[A-Za-z0-9_]+$"
+    value = "Test1Value2"
+    matched = re.compile(rex).fullmatch(value)
+    print("Matched!!!" if matched else "No Match!!!")
 
 
 def lesson_035() -> None:
     # Lists XOR
-    return
+    l1 = [1, 2, 5]
+    l2 = [1, 2, 9, 4, 8, 9]
+    print(set(l1).symmetric_difference(l2))
+    l3 = [1, 2, 3, 4, 5]
+    l4 = [1, 3, 4, 5, 6]
+    print(set(l3) ^ set(l4))
 
 
 def lesson_036() -> None:
     # Decorators
-    return
+    import asyncio
+
+    def print_decor(f):
+        async def wrapper(*arg, **kwargs):
+            try:
+                print("Locking Objects\n", "Adding & Altering `kwargs`")
+                kwargs["added_n_altered_kwarg"] = "Added!!!"
+                await f(*arg, **kwargs)
+            finally:
+                print("Unlocking Objects\n", "Closing DB Connections\n", "Running Cleanup")
+
+        return wrapper
+
+    @print_decor
+    async def print_fn(*args, **kwargs):
+        print(f"Kwargs {kwargs['added_n_altered_kwarg']}")
+
+    asyncio.run(print_fn())
 
 
 def lesson_037() -> None:
@@ -869,11 +916,13 @@ def lesson_082() -> None:
 
 
 def lesson_083() -> None:
+    # `.sort()` vs `sorted()`
     _list1 = [1, 3, 2, 9, 4]
     _list2 = [1, 3, 2, 9, 7, 3]
     print(sorted(_list1))
     print(_list2.sort())  # Inplace
     print(_list2)
+
 
 def lesson_084() -> None:
     print(list(range(0, 5)))
@@ -882,6 +931,7 @@ def lesson_084() -> None:
 def lesson_085() -> None:
     # async
     ...
+
 
 def lesson_086() -> None:
     # PyTest strategy-fixture
@@ -892,9 +942,11 @@ def lesson_087() -> None:
     # TDD & BDD
     ...
 
+
 def lesson_088() -> None:
     # __slots__
     ...
+
 
 def lesson_089() -> None:
     # TODO: Upgrade python
@@ -920,6 +972,7 @@ def lesson_089() -> None:
         case [False, False]:
             print("Number is greater than 50")
 
+
 def lesson_090() -> None:
 
     def args_kwargs_fn(*args, **kwargs):
@@ -939,6 +992,7 @@ def lesson_091() -> None:
     print(_diff)
     print(_diff.days)
 
+
 def lesson_092() -> None:
     x = False in [False]
     y = False
@@ -947,10 +1001,16 @@ def lesson_092() -> None:
     print(False == False in [False])
 
 
+def lesson_093() -> None:
+    # Threading
+    ...
+
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == "__main__":
-    _lesson_number = "092"
-    eval(f"lesson_{_lesson_number}()")
+    chapter_code = input()
+    chapter_code = chapter_code if chapter_code else "001"
+    eval(f"lesson_{chapter_code}()")
     print("\nLessons by Aashish Gahlawat")
